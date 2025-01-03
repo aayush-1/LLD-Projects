@@ -1,7 +1,7 @@
 package lld.projects.model;
 
 import lld.projects.model.PlayingPiece;
-import org.apache.commons.lang3.tuple.Pair;
+import java.util.AbstractMap.SimpleEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +27,13 @@ public class Board {
     }
 
 
-    public List<Pair<Integer, Integer>> getFreeCells() {
-        List<Pair<Integer, Integer>> freeCells = new ArrayList<>();
+    public List<SimpleEntry<Integer, Integer>> getFreeCells() {
+        List<SimpleEntry<Integer, Integer>> freeCells = new ArrayList<>();
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (board[i][j] == null) {
-                    Pair<Integer, Integer> rowColumn = Pair.of(i, j);
+                    SimpleEntry<Integer, Integer> rowColumn = new SimpleEntry(i, j);
                     freeCells.add(rowColumn);
                 }
             }

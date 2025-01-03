@@ -5,7 +5,7 @@ import lld.projects.model.PieceType;
 import lld.projects.model.Player;
 import lld.projects.model.PlayingPieceO;
 import lld.projects.model.PlayingPieceX;
-import org.apache.commons.lang3.tuple.Pair;
+import java.util.AbstractMap.SimpleEntry;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -45,7 +45,7 @@ public class TicTacToeGame {
 
             //get the free space from the board
             gameBoard.printBoard();
-            List<Pair<Integer, Integer>> freeSpaces =  gameBoard.getFreeCells();
+            List<SimpleEntry<Integer, Integer>> freeSpaces =  gameBoard.getFreeCells();
             if(freeSpaces.isEmpty()) {
                 noWinner = false;
                 continue;
